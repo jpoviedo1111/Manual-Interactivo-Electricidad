@@ -60,11 +60,12 @@ export function Field({ label, value, setValue, placeholder, type = "number" }: 
       <label className="block text-xs font-bold text-gray-700 mb-1">{label}</label>
       <input
         type={type}
+        inputMode={type === "number" ? "decimal" : undefined}
         step="any"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
-        className="w-full border border-marca-gris-l rounded px-2 py-1.5 text-sm focus:outline-none focus:border-marca-azul bg-white"
+        className="w-full border border-marca-gris-l rounded px-3 py-2.5 text-sm focus:outline-none focus:border-marca-azul bg-white min-h-[44px]"
       />
     </div>
   );
@@ -98,7 +99,7 @@ export function CalcButton({ onClick, label = "Calcular" }: { onClick: () => voi
   return (
     <button
       onClick={onClick}
-      className="bg-marca-azul hover:bg-marca-azul-med text-white px-4 py-1.5 rounded text-sm font-bold mt-2 transition"
+      className="bg-marca-azul hover:bg-marca-azul-med active:bg-marca-azul text-white px-4 py-3 rounded text-sm font-bold mt-2 transition w-full min-h-[48px]"
     >
       {label}
     </button>

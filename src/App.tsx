@@ -9,11 +9,13 @@ import { LessonPage } from "@/pages/LessonPage";
 import { QuizPage } from "@/pages/QuizPage";
 import { CalculatorsPage } from "@/pages/CalculatorsPage";
 import { FinalExamPage } from "@/pages/FinalExamPage";
+import { OfflineBanner } from "@/components/common/OfflineBanner";
 
 export default function App() {
   return (
     <AuthProvider>
       <ProgressProvider>
+        <OfflineBanner />
         <BrowserRouter>
           <Routes>
             <Route element={<ProtectedRoute />}>

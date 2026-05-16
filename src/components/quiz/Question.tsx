@@ -15,11 +15,11 @@ export function QuestionView({ num, question, selected, onSelect, reveal, locked
       <p className="font-bold mb-2 text-sm">
         {num}. {question.prompt}
       </p>
-      <div className="space-y-1">
+      <div className="space-y-2">
         {question.options.map((opt) => {
           const isSelected = selected === opt.id;
           const isCorrect = opt.id === question.correct;
-          let cls = "block px-3 py-2 rounded cursor-pointer text-sm transition";
+          let cls = "block px-3 py-3 min-h-[48px] rounded cursor-pointer text-sm transition flex items-center";
           if (reveal && isCorrect) cls += " bg-marca-verde-cl text-marca-verde font-bold";
           else if (reveal && isSelected && !isCorrect) cls += " bg-marca-rojo-cl text-marca-rojo font-bold";
           else if (isSelected) cls += " bg-marca-azul-cl text-marca-azul font-bold";

@@ -38,7 +38,7 @@ export function LessonPage() {
         <LessonView lesson={lesson} />
       </article>
 
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center justify-between gap-3 sticky bottom-0 bg-[#ECEFF1] py-3 -mx-4 px-4 lg:mx-0 lg:px-0 lg:static lg:bg-transparent lg:py-0">
         {prev ? (
           <button
             onClick={() => navigate(`/modulo/${module.id}/leccion/${prev.id}`)}
